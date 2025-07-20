@@ -1,7 +1,7 @@
 // Quiz 
 import java.io.*;
 import java.util.*;
-import java.lang.*;
+//import java.lang.*;
 class Display{
   public void showScore(int score) {
       if (score > 0) {
@@ -45,6 +45,7 @@ class Display{
               selectTopic();
               break;
       }
+      sc.close();
   }
 }
 class JavaQuiz extends Display {
@@ -141,10 +142,12 @@ class JavaQuiz extends Display {
       default:
         System.out.println("Invalid question number.");
     }
+    sc.close();
   }
 }
 
 class PythonQuiz extends Display {
+  int score =0;
   Display d = new Display();
   public void startQuiz() {
     System.out.println("🧠Starting Python Quiz...");
@@ -175,7 +178,7 @@ class PythonQuiz extends Display {
     d.selectTopic();
   }
   public void displayCorrectAnswer(int j){
-    int score = 0;
+   // int score = 0;
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter correct option [a-d]:");
     String res = sc.nextLine();
@@ -227,10 +230,12 @@ class PythonQuiz extends Display {
       default:
         System.out.println("Invalid question number.");
     }
+    sc.close();
   }
 }
 
 class CppQuiz extends Display {
+  int score =0;
   Display d = new Display();
   public void startQuiz() {
     System.out.println("🧠Starting C++ Quiz...");
@@ -260,7 +265,6 @@ class CppQuiz extends Display {
     d.selectTopic();
   }
   public void displayCorrectAnswer(int j) {
-      int score =0;
       Scanner sc = new Scanner(System.in);
       System.out.print("Enter correct option [a-d]: ");
       String res = sc.nextLine();
@@ -323,6 +327,7 @@ class CppQuiz extends Display {
           default:
               System.out.println("Invalid question number.");
       }
+      sc.close();
   }
 }
 public class Quiz extends Display {
