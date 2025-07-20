@@ -145,7 +145,6 @@ class JavaQuiz extends Display {
 }
 
 class PythonQuiz extends Display {
-  int score =0;
   Display d = new Display();
   public void startQuiz() {
     System.out.println("🧠Starting Python Quiz...");
@@ -176,6 +175,7 @@ class PythonQuiz extends Display {
     d.selectTopic();
   }
   public void displayCorrectAnswer(int j){
+    int score = 0;
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter correct option [a-d]:");
     String res = sc.nextLine();
@@ -189,7 +189,7 @@ class PythonQuiz extends Display {
         }
         break;
       case 2:
-        if (res.equalsIgnoreCase("b")) {
+        if (res.equalsIgnoreCase("a")) {
           System.out.println("⭐ Correct Answer!");
           System.out.println("Reason: In Python, 8 >> 2 results in 2.(8/4 =2)");
         } else {
@@ -231,7 +231,6 @@ class PythonQuiz extends Display {
 }
 
 class CppQuiz extends Display {
-  int score =0;
   Display d = new Display();
   public void startQuiz() {
     System.out.println("🧠Starting C++ Quiz...");
@@ -261,6 +260,7 @@ class CppQuiz extends Display {
     d.selectTopic();
   }
   public void displayCorrectAnswer(int j) {
+      int score =0;
       Scanner sc = new Scanner(System.in);
       System.out.print("Enter correct option [a-d]: ");
       String res = sc.nextLine();
