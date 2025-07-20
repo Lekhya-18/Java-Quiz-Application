@@ -35,7 +35,7 @@ class Display{
               break;
           case 4:
               System.out.println("Exiting the Quiz.");
-              System.out.println("Thank you! Have a great day :)");
+              System.out.println("Thank you! Have a great day :) 🫶");
               System.out.println("____________________________________________");
               System.exit(0);
               break;
@@ -357,7 +357,7 @@ public class Quiz extends Display {
       System.exit(0);
     }
     System.out.println("____________________________________________");
-    System.out.println("If you want to attempt the quiz again select the topic again:(enter 4 to exit)😉");
+    System.out.println("If you want to attempt the quiz again select the topic again:(enter 4 to exit)");
     ds.selectTopic();
   }
 }
