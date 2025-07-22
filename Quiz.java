@@ -140,6 +140,7 @@ class JavaQuiz extends Display {
         break;
       default:
         System.out.println("Invalid question number.");
+        Scanner.close();
     }
   }
 }
@@ -226,6 +227,7 @@ class PythonQuiz extends Display {
         break;
       default:
         System.out.println("Invalid question number.");
+     Scanner.close();
     }
   }
 }
@@ -322,6 +324,7 @@ class CppQuiz extends Display {
               break;
           default:
               System.out.println("Invalid question number.");
+       Scanner.close();
       }
   }
 }
