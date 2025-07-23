@@ -45,10 +45,10 @@ class Display{
               selectTopic();
               break;
       }
+    Scanner.close();
   }
 }
 class JavaQuiz extends Display {
-  int score =0;
   Display d = new Display();
   public void startQuiz() {
     System.out.println("🧠Starting Java Quiz...");
@@ -79,6 +79,7 @@ class JavaQuiz extends Display {
     d.selectTopic();
   }
   public void displayCorrectAnswer(int j) {
+    int score=0;
     Scanner sc = new Scanner(System.in);
     System.out.print("Enter correct answer (a-d): ");
     String res = sc.nextLine();
@@ -140,7 +141,7 @@ class JavaQuiz extends Display {
         break;
       default:
         System.out.println("Invalid question number.");
-        Scanner.close();
+   Scanner.close();
     }
   }
 }
