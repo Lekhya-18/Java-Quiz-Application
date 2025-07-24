@@ -143,6 +143,7 @@ class JavaQuiz extends Display {
         System.out.println("Invalid question number.");
     }
   }
+  Scanner.close();
 }
 
 class PythonQuiz extends Display {
@@ -229,6 +230,7 @@ class PythonQuiz extends Display {
         System.out.println("Invalid question number.");
     }
   }
+  Scanner.close();
 }
 
 class CppQuiz extends Display {
@@ -257,7 +259,7 @@ class CppQuiz extends Display {
     System.out.println("a) _myVar\nb) myVar1\nc) 1stVar\nd) my_var");
     displayCorrectAnswer(5);
     System.out.println("____________________________________________");
-    d.showScore(0); // Assuming score is managed in Display class
+    d.showScore(score); // Assuming score is managed in Display class
     System.out.println("If you want attempt the quiz again or python quiz or C++ quiz select the topic again");
     d.selectTopic();
   }
@@ -325,6 +327,7 @@ class CppQuiz extends Display {
               System.out.println("Invalid question number.");
       }
   }
+  Scanner.close();
 }
 public class Quiz extends Display {
   public static void main(String[] args) throws IOException {
