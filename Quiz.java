@@ -50,6 +50,7 @@ class Display{
 }
 class JavaQuiz extends Display {
   Display d = new Display();
+  int score =0;
   public void startQuiz() {
     System.out.println("🧠Starting Java Quiz...");
     System.out.println("____________________________________________");
@@ -79,7 +80,6 @@ class JavaQuiz extends Display {
     d.selectTopic();
   }
   public void displayCorrectAnswer(int j) {
-    int score=0;
     Scanner sc = new Scanner(System.in);
     System.out.print("Enter correct answer (a-d): ");
     String res = sc.nextLine();
@@ -141,13 +141,13 @@ class JavaQuiz extends Display {
         break;
       default:
         System.out.println("Invalid question number.");
-   Scanner.close();
     }
   }
 }
 
 class PythonQuiz extends Display {
   Display d = new Display();
+  int score =0;
   public void startQuiz() {
     System.out.println("🧠Starting Python Quiz...");
     System.out.println("____________________________________________");
@@ -177,7 +177,6 @@ class PythonQuiz extends Display {
     d.selectTopic();
   }
   public void displayCorrectAnswer(int j){
-    int score = 0;
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter correct option [a-d]:");
     String res = sc.nextLine();
@@ -228,13 +227,13 @@ class PythonQuiz extends Display {
         break;
       default:
         System.out.println("Invalid question number.");
-     Scanner.close();
     }
   }
 }
 
 class CppQuiz extends Display {
   Display d = new Display();
+  int score =0;
   public void startQuiz() {
     System.out.println("🧠Starting C++ Quiz...");
     System.out.println("____________________________________________");
@@ -263,7 +262,6 @@ class CppQuiz extends Display {
     d.selectTopic();
   }
   public void displayCorrectAnswer(int j) {
-      int score =0;
       Scanner sc = new Scanner(System.in);
       System.out.print("Enter correct option [a-d]: ");
       String res = sc.nextLine();
@@ -325,7 +323,6 @@ class CppQuiz extends Display {
               break;
           default:
               System.out.println("Invalid question number.");
-       Scanner.close();
       }
   }
 }
@@ -343,7 +340,7 @@ public class Quiz extends Display {
     System.out.println("📚Before we begin, please read the instructions carefully.");
     System.out.println("______INSTRUCTIONS______");
     System.out.println("i)IN this quiz, you will be asked 5 questions with 4 options each");
-    System.out.println("ii)Each questions carries 10marks for correct answer and -5 marks for wrong answer");
+    System.out.println("ii)Each question carries 10marks for correct answer and -5 marks for wrong answer");
     System.out.println("iii)You can select a topic from Java, Python, or C++");
     System.out.println("iv)Once quiz started, you cannot exit the quiz at any time.");
     System.out.println("____________________________________________");
