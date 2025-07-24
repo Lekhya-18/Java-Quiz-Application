@@ -45,7 +45,7 @@ class Display{
               selectTopic();
               break;
       }
-    Scanner.close();
+    sc.close();
   }
 }
 class JavaQuiz extends Display {
@@ -143,7 +143,7 @@ class JavaQuiz extends Display {
         System.out.println("Invalid question number.");
     }
   }
-  Scanner.close();
+  sc.close();
 }
 
 class PythonQuiz extends Display {
@@ -195,7 +195,7 @@ class PythonQuiz extends Display {
           System.out.println("⭐ Correct Answer!");
           System.out.println("Reason: In Python, 8 >> 2 results in 2.(8/4 =2)");
         } else {
-          System.out.println("❌Wrong Answer! Correct answer is b) 2");
+          System.out.println("❌Wrong Answer! Correct answer is a) 2");
           System.out.println("Reason: In Python, 8 >> 2 results in 2.(8/4 =2)");
         }
         break;
@@ -230,7 +230,7 @@ class PythonQuiz extends Display {
         System.out.println("Invalid question number.");
     }
   }
-  Scanner.close();
+  sc.close();
 }
 
 class CppQuiz extends Display {
@@ -327,7 +327,7 @@ class CppQuiz extends Display {
               System.out.println("Invalid question number.");
       }
   }
-  Scanner.close();
+  sc.close();
 }
 public class Quiz extends Display {
   public static void main(String[] args) throws IOException {
