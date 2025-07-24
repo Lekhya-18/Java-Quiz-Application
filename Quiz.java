@@ -143,7 +143,6 @@ class JavaQuiz extends Display {
         System.out.println("Invalid question number.");
     }
   }
-  sc.close();
 }
 
 class PythonQuiz extends Display {
@@ -230,7 +229,6 @@ class PythonQuiz extends Display {
         System.out.println("Invalid question number.");
     }
   }
-  sc.close();
 }
 
 class CppQuiz extends Display {
@@ -327,7 +325,6 @@ class CppQuiz extends Display {
               System.out.println("Invalid question number.");
       }
   }
-  sc.close();
 }
 public class Quiz extends Display {
   public static void main(String[] args) throws IOException {
