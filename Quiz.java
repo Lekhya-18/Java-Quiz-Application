@@ -25,6 +25,8 @@ class Display{
     System.out.println("2. Python");
     System.out.println("3. C++");
     System.out.println("4. Exit");
+    System.out.println("________________________________");
+    System.out.print("Enter your choice (1-4): ");
     int choice = sc.nextInt();
     
     switch (choice) {
