@@ -4,49 +4,50 @@ import java.util.*;
 import java.lang.*;
 class Display{
   public void showScore(int score) {
-      if (score > 0) {
-          System.out.println("____________________________________________");
-          System.out.println("Congratulations! You scored " + score + " points out of 50🎉🎉");
-          System.out.println("Thank you for participating in the Quiz ;)🫶");
+    if (score < 0) {
+      // Ensure score does not go below zero
+      System.out.println("Your score is negative (" + score + ").");
+      System.out.println("Better luck next time!");
+    }
+    else if (score >= 0 && score < 20) {
+      System.out.println("Your score is: " + score + ". Keep trying, you can improve!");
+    } else if (score >= 20 && score < 35) {
+      System.out.println("Your score is: " + score + ". Good job, but there's room for improvement!");
+    } else {
+      System.out.println("Your score is: " + score + ". Excellent work!");
+    }
+  }
 
-      } else {
-          System.out.println("You scored "+score+" points out of 50 :((");
-          System.out.println("Better luck next time!");
-          System.out.println("Thank you for participating in the Quiz :)🫶");
-      }
-  }
   public void selectTopic() {
-      System.out.println("_______Select a topic_______");
-      System.out.println("1. Java\n2. Python\n3. C++\n4. Exit");
-      Scanner sc = new Scanner(System.in);
-      int topic = sc.nextInt();
-      switch (topic) {
-          case 1:
-              JavaQuiz java = new JavaQuiz();
-              java.startQuiz();
-              break;
-          case 2:
-              PythonQuiz py = new PythonQuiz();
-              py.startQuiz();
-              break;
-          case 3:
-              CppQuiz cpp = new CppQuiz();
-              cpp.startQuiz();
-              break;
-          case 4:
-              System.out.println("Exiting the Quiz.");
-              System.out.println("Thank you! Have a great day :) 🫶");
-              System.out.println("____________________________________________");
-              System.exit(0);
-              break;
-          default:
-              System.out.println("Invalid topic selected.");
-              System.out.println("Please select a valid topic.");
-              selectTopic();
-              break;
-      }
-    sc.close();
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Select a topic for the quiz:");
+    System.out.println("1. Java");
+    System.out.println("2. Python");
+    System.out.println("3. C++");
+    System.out.println("4. Exit");
+    int choice = sc.nextInt();
+    
+    switch (choice) {
+      case 1:
+        JavaQuiz javaQuiz = new JavaQuiz();
+        javaQuiz.startQuiz();
+        break;
+      case 2:
+        PythonQuiz pythonQuiz = new PythonQuiz();
+        pythonQuiz.startQuiz();
+        break;
+      case 3:
+        CppQuiz cppQuiz = new CppQuiz();
+        cppQuiz.startQuiz();
+        break;
+      case 4:
+        System.out.println("Exiting the quiz. Thank you!");
+        System.exit(0);
+      default:
+        System.out.println("Invalid choice! Please select a valid topic.");
+    }
   }
+
 }
 class JavaQuiz extends Display {
   Display d = new Display();
@@ -142,6 +143,8 @@ class JavaQuiz extends Display {
       default:
         System.out.println("Invalid question number.");
     }
+    d.showScore(score);
+    //sc.close();
   }
 }
 
@@ -183,44 +186,54 @@ class PythonQuiz extends Display {
     switch (j) {
       case 1:
         if (res.equalsIgnoreCase("a")) {
+          score += 10;
           System.out.println("⭐ Correct Answer!");
           System.out.println("Reason: In Python, type([]) returns <class 'list'>.");
         } else {
+          score -=5;
           System.out.println("❌Wrong Answer! Correct answer is a) <class 'list'>");
         }
         break;
       case 2:
         if (res.equalsIgnoreCase("a")) {
+          score += 10;
           System.out.println("⭐ Correct Answer!");
           System.out.println("Reason: In Python, 8 >> 2 results in 2.(8/4 =2)");
         } else {
+          score -= 5;
           System.out.println("❌Wrong Answer! Correct answer is a) 2");
           System.out.println("Reason: In Python, 8 >> 2 results in 2.(8/4 =2)");
         }
         break;
       case 3:
         if (res.equalsIgnoreCase("b")) {
+          score += 10;
           System.out.println("⭐ Correct Answer!");
           System.out.println("Reason: Due to floating-point arithmetic precision issues, 0.1 + 0.2 != 0.3., o/p:0.3000000000000004");
         } else {
+          score -= 5;
           System.out.println("❌Wrong Answer! Correct answer is b) False");
           System.out.println("Reason: Due to floating-point arithmetic precision issues, 0.1 + 0.2 != 0.3., o/p:0.3000000000000004");
         }
         break;
       case 4:
         if (res.equalsIgnoreCase("a")) {
+          score += 10;
           System.out.println("⭐ Correct Answer!");
           System.out.println("Reason: The intersection of sets a and b is {2,3}.");
         } else {
+          score -= 5;
           System.out.println("❌Wrong Answer! Correct answer is a) {2,3}");
           System.out.println("Reason: The intersection of sets a and b is {2,3}.");
         }
         break;
       case 5:
         if (res.equalsIgnoreCase("b")) {
+          score += 10;
           System.out.println("⭐ Correct Answer!");
           System.out.println("Reason: In Python, the expression '5' * 3 results in '555'.");
         } else {
+          score -= 5;
           System.out.println("❌Wrong Answer! Correct answer is b) '555'");
           System.out.println("Reason: In Python, the expression '5' * 3 results in '555'.");
         }
@@ -228,6 +241,8 @@ class PythonQuiz extends Display {
       default:
         System.out.println("Invalid question number.");
     }
+    d.showScore(score);
+   // sc.close();
   }
 }
 
@@ -324,7 +339,9 @@ class CppQuiz extends Display {
           default:
               System.out.println("Invalid question number.");
       }
-  }
+  d.showScore(score);
+  //sc.close();
+}
 }
 public class Quiz extends Display {
   public static void main(String[] args) throws IOException {
@@ -339,10 +356,11 @@ public class Quiz extends Display {
     System.out.println("Hello, " + name + " Let's get started.");
     System.out.println("📚Before we begin, please read the instructions carefully.");
     System.out.println("______INSTRUCTIONS______");
-    System.out.println("i)IN this quiz, you will be asked 5 questions with 4 options each");
-    System.out.println("ii)Each question carries 10marks for correct answer and -5 marks for wrong answer");
-    System.out.println("iii)You can select a topic from Java, Python, or C++");
-    System.out.println("iv)Once quiz started, you cannot exit the quiz at any time.");
+    System.out.println("i) In this quiz, you will be asked 5 questions with 4 options each");
+    System.out.println("ii) Each question carries 10 marks for correct answer and -5 marks for wrong answer");
+    System.out.println("iii) You can select a topic from Java, Python, or C++");
+    System.out.println("iv) Once quiz started, you cannot exit the quiz at any time.");
+    System.out.println("Good luck!");
     System.out.println("____________________________________________");
     System.out.println("Are you ready? (yes/no)");
     String ready = br.readLine();
