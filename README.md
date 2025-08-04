@@ -13,12 +13,12 @@ This is a **command-line based quiz application** built using Java. It allows us
 ---
 
 ## 📂 Files in this project
-| File Name         | Description                          |
-|------------------|--------------------------------------|
-| `Quiz.java`       | Main logic for running the quiz      |
-| `Display.java`    | Displays messages based on score     |
-| `DisplayScore.java` | Handles score calculations and output |
-| `SelectTopic.class` | Manages topic selection (if present) |
+| File Name          | Description                             |
+|------------------  |------------------------------------------|
+| `Quiz.java`        | Main logic for running the quiz         |
+| `Display.java`     | Displays messages based on score        | 
+| `DisplayScore.java`| Handles score calculations and output |
+| `SelectTopic.class`| Manages topic selection (if present)  |
 
 ---
 
